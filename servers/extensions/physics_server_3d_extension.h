@@ -482,6 +482,8 @@ public:
 	EXBIND2(pin_joint_set_local_b, RID, const Vector3 &)
 	EXBIND1RC(Vector3, pin_joint_get_local_b, RID)
 
+	EXBIND1R(float, pin_joint_get_applied_force, RID)
+
 	EXBIND5(joint_make_hinge, RID, RID, const Transform3D &, RID, const Transform3D &)
 	EXBIND7(joint_make_hinge_simple, RID, RID, const Vector3 &, const Vector3 &, RID, const Vector3 &, const Vector3 &)
 
@@ -491,15 +493,24 @@ public:
 	EXBIND3(hinge_joint_set_flag, RID, HingeJointFlag, bool)
 	EXBIND2RC(bool, hinge_joint_get_flag, RID, HingeJointFlag)
 
+	EXBIND1R(float, hinge_joint_get_applied_force, RID)
+	EXBIND1R(float, hinge_joint_get_applied_torque, RID)
+
 	EXBIND5(joint_make_slider, RID, RID, const Transform3D &, RID, const Transform3D &)
 
 	EXBIND3(slider_joint_set_param, RID, SliderJointParam, real_t)
 	EXBIND2RC(real_t, slider_joint_get_param, RID, SliderJointParam)
 
+	EXBIND1R(float, slider_joint_get_applied_force, RID)
+	EXBIND1R(float, slider_joint_get_applied_torque, RID)
+
 	EXBIND5(joint_make_cone_twist, RID, RID, const Transform3D &, RID, const Transform3D &)
 
 	EXBIND3(cone_twist_joint_set_param, RID, ConeTwistJointParam, real_t)
 	EXBIND2RC(real_t, cone_twist_joint_get_param, RID, ConeTwistJointParam)
+
+	EXBIND1R(float, cone_twist_joint_get_applied_force, RID)
+	EXBIND1R(float, cone_twist_joint_get_applied_torque, RID)
 
 	EXBIND5(joint_make_generic_6dof, RID, RID, const Transform3D &, RID, const Transform3D &)
 
@@ -508,6 +519,9 @@ public:
 
 	EXBIND4(generic_6dof_joint_set_flag, RID, Vector3::Axis, G6DOFJointAxisFlag, bool)
 	EXBIND3RC(bool, generic_6dof_joint_get_flag, RID, Vector3::Axis, G6DOFJointAxisFlag)
+
+	EXBIND1R(float, generic_6dof_joint_get_applied_force, RID)
+	EXBIND1R(float, generic_6dof_joint_get_applied_torque, RID)
 
 	EXBIND1RC(JointType, joint_get_type, RID)
 

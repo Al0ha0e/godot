@@ -452,7 +452,7 @@ public:
 	int joint_get_solver_position_iterations(RID p_joint);
 	void joint_set_solver_position_iterations(RID p_joint, int p_value);
 
-	float pin_joint_get_applied_force(RID p_joint);
+	virtual float pin_joint_get_applied_force(RID p_joint) override;
 
 	double hinge_joint_get_jolt_param(RID p_joint, HingeJointParamJolt p_param) const;
 	void hinge_joint_set_jolt_param(RID p_joint, HingeJointParamJolt p_param, double p_value);
@@ -460,8 +460,8 @@ public:
 	bool hinge_joint_get_jolt_flag(RID p_joint, HingeJointFlagJolt p_flag) const;
 	void hinge_joint_set_jolt_flag(RID p_joint, HingeJointFlagJolt p_flag, bool p_enabled);
 
-	float hinge_joint_get_applied_force(RID p_joint);
-	float hinge_joint_get_applied_torque(RID p_joint);
+	virtual float hinge_joint_get_applied_force(RID p_joint) override;
+	virtual float hinge_joint_get_applied_torque(RID p_joint) override;
 
 	double slider_joint_get_jolt_param(RID p_joint, SliderJointParamJolt p_param) const;
 	void slider_joint_set_jolt_param(RID p_joint, SliderJointParamJolt p_param, double p_value);
@@ -469,8 +469,8 @@ public:
 	bool slider_joint_get_jolt_flag(RID p_joint, SliderJointFlagJolt p_flag) const;
 	void slider_joint_set_jolt_flag(RID p_joint, SliderJointFlagJolt p_flag, bool p_enabled);
 
-	float slider_joint_get_applied_force(RID p_joint);
-	float slider_joint_get_applied_torque(RID p_joint);
+	virtual float slider_joint_get_applied_force(RID p_joint) override;
+	virtual float slider_joint_get_applied_torque(RID p_joint) override;
 
 	double cone_twist_joint_get_jolt_param(RID p_joint, ConeTwistJointParamJolt p_param) const;
 	void cone_twist_joint_set_jolt_param(RID p_joint, ConeTwistJointParamJolt p_param, double p_value);
@@ -478,8 +478,8 @@ public:
 	bool cone_twist_joint_get_jolt_flag(RID p_joint, ConeTwistJointFlagJolt p_flag) const;
 	void cone_twist_joint_set_jolt_flag(RID p_joint, ConeTwistJointFlagJolt p_flag, bool p_enabled);
 
-	float cone_twist_joint_get_applied_force(RID p_joint);
-	float cone_twist_joint_get_applied_torque(RID p_joint);
+	virtual float cone_twist_joint_get_applied_force(RID p_joint) override;
+	virtual float cone_twist_joint_get_applied_torque(RID p_joint) override;
 
 	double generic_6dof_joint_get_jolt_param(RID p_joint, Vector3::Axis p_axis, G6DOFJointAxisParamJolt p_param) const;
 	void generic_6dof_joint_set_jolt_param(RID p_joint, Vector3::Axis p_axis, G6DOFJointAxisParamJolt p_param, double p_value);
@@ -487,8 +487,8 @@ public:
 	bool generic_6dof_joint_get_jolt_flag(RID p_joint, Vector3::Axis p_axis, G6DOFJointAxisFlagJolt p_flag) const;
 	void generic_6dof_joint_set_jolt_flag(RID p_joint, Vector3::Axis p_axis, G6DOFJointAxisFlagJolt p_flag, bool p_enabled);
 
-	float generic_6dof_joint_get_applied_force(RID p_joint);
-	float generic_6dof_joint_get_applied_torque(RID p_joint);
+	virtual float generic_6dof_joint_get_applied_force(RID p_joint) override;
+	virtual float generic_6dof_joint_get_applied_torque(RID p_joint) override;
 };
 
 VARIANT_ENUM_CAST(JoltPhysicsServer3D::HingeJointParamJolt)
